@@ -68,10 +68,18 @@ const Header = () => {
         </div>
       </div>
 
-      {/* мобильное меню — полноэкранный оверлей */}
+      {/* затемнение фона при открытом меню */}
       <div
-        className={`fixed top-0 left-0 w-screen h-screen bg-white z-[999] flex flex-col lg:hidden transition-opacity duration-300 ${
+        className={`fixed inset-0 bg-black/40 z-[998] lg:hidden transition-opacity duration-300 ${
           isOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
+        }`}
+        onClick={close}
+      />
+
+      {/* мобильное меню — выдвижная панель слева */}
+      <div
+        className={`fixed top-0 left-0 h-full w-[85vw] max-w-[344px] bg-white z-[999] flex flex-col lg:hidden transition-transform duration-300 ${
+          isOpen ? 'translate-x-0' : '-translate-x-full'
         }`}
       >
         {/* верхняя строка: X (закрыть) + LanguageSelect */}
