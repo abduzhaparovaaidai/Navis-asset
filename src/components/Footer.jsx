@@ -63,7 +63,7 @@ const Footer = () => (
     <div className="w-full max-w-[1440px] mx-auto px-[16px] lg:px-[150px]">
       <div className="flex flex-col lg:flex-row lg:justify-between gap-[40px] lg:gap-0 pt-[40px] lg:pt-[46px] pb-[30px] lg:pb-[40px]">
 
-        {/* Brand: logo + description + email */}
+        {/* Brand logo, description и email */}
         <div className="flex flex-col">
           <div className="flex items-center gap-[16px] mb-[20px]">
             <img src={logo} alt="Navis Asset" className="h-[55px] w-auto" />
@@ -80,13 +80,13 @@ const Footer = () => (
           </a>
         </div>
 
-        {/* Navigation: Основное + Пользователям side by side */}
+        {/*  Основное и Пользователям */}
         <div className="flex flex-row gap-[25px] lg:gap-[82px]">
           <NavColumn title="Основное"       links={navMain} />
           <NavColumn title="Пользователям"  links={navUser} />
         </div>
 
-        {/* Social links */}
+        {/* соц сети */}
         <div className="flex flex-col gap-[20px] lg:gap-[30px]">
           <h5 className="font-inter font-semibold text-[16px] text-black leading-none">
             Мы в соцсетях
@@ -108,10 +108,10 @@ const Footer = () => (
       </div>
     </div>
 
-    {/* Divider — прямой потомок footer, растягивается на всю ширину */}
+    {/* линия разделяющая футер */}
     <div className="w-full h-[1px] bg-[#D8D8D8]" />
 
-    {/* Bottom bar */}
+    {/* нижний футер */}
     <div className="w-full max-w-[1440px] mx-auto px-[16px] lg:px-[150px]">
       <div className="flex flex-col lg:flex-row lg:justify-between lg:items-center py-[16px] lg:py-[18px] gap-[10px] lg:gap-0">
         <p className="font-inter font-normal text-[10px] lg:text-[12px] text-[#9A9A9A] leading-[1.12]">

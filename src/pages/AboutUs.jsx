@@ -13,16 +13,13 @@ const AboutUs = () => (
       О Navis Asset
     </h1>
 
-    {/* Bento grid: flex-col mobile, 2-col grid desktop */}
     <div className="flex flex-col lg:grid lg:grid-cols-2 gap-[10px]">
 
-      {/* ── BLOCK A: Founder stats ── */}
+      {/* основатель */}
       <div className="flex flex-col gap-[10px] lg:h-[300px]">
 
-        {/* Row 1: Founder card + 45+ card side by side */}
         <div className="flex flex-row gap-[10px] h-[100px] lg:h-auto lg:flex-1">
 
-          {/* Founder card */}
           <div className="flex-1 rounded-[12px] bg-[#F5F7FA] p-[16px] flex flex-row items-center gap-[10px]">
             <div className="w-[48px] h-[48px] rounded-full overflow-hidden shrink-0">
               <img src={founderImg} alt="Тилек Бегалиев" className="w-full h-full object-cover object-top" />
@@ -37,7 +34,7 @@ const AboutUs = () => (
             </div>
           </div>
 
-          {/* 45+ clients card */}
+          {/* 45+ клиентов */}
           <div className="flex-1 rounded-[12px] p-[20px] flex flex-col justify-between" style={gradient}>
             <span className="font-inter font-bold text-[32px] lg:text-[42px] text-white leading-none">
               45+
@@ -49,7 +46,7 @@ const AboutUs = () => (
 
         </div>
 
-        {/* Row 2: 100% quality — full width */}
+        {/* 100% качество */}
         <div className="h-[100px] lg:h-auto lg:flex-1 rounded-[12px] bg-[#F5F7FA] p-[20px] flex flex-row items-center gap-[14px]">
           <span className="font-inter font-bold text-[32px] lg:text-[42px] text-black leading-none whitespace-nowrap">
             100%
@@ -61,17 +58,17 @@ const AboutUs = () => (
 
       </div>
 
-      {/* ── BLOCK B: Building photo ── */}
+      {/* фото здания */}
       <div className="h-[200px] lg:h-[300px] rounded-[20px] overflow-hidden">
         <img src={buildingImg} alt="Здание" className="w-full h-full object-cover" />
       </div>
 
-      {/* ── BLOCK C: Team / employees photo ── */}
+      {/* фото сотрудников */}
       <div className="h-[200px] lg:h-[300px] rounded-[20px] overflow-hidden">
         <img src={employeesImg} alt="Команда" className="w-full h-full object-cover" />
       </div>
 
-      {/* ── BLOCK D: 10+ and Guarantee stats ── */}
+      {/* 10+ профессионалов и Гарантия */}
       <div className="flex flex-row gap-[10px] h-[200px] lg:h-[300px]">
 
         {/* 10+ professionals */}
@@ -84,7 +81,7 @@ const AboutUs = () => (
           </p>
         </div>
 
-        {/* Guarantee */}
+        {/* Гарантия */}
         <div className="flex-1 rounded-[12px] bg-[#F5F7FA] p-[20px] flex flex-col justify-between">
           <span className="font-inter font-bold text-[28px] lg:text-[40px] text-black leading-none">
             Гарантия
@@ -98,10 +95,10 @@ const AboutUs = () => (
 
     </div>
 
-    {/* ── Text sections below bento grid ── */}
+    {/* О гарантии */}
     <div className="mt-[60px] lg:mt-[100px] flex flex-col gap-[60px] lg:gap-[80px]">
 
-      {/* Section 1: Guarantee */}
+      {/* гарантия текст */}
       <div className="flex flex-col lg:flex-row lg:justify-between lg:items-start gap-[23px] lg:gap-0">
         <h2 className="font-inter font-semibold text-[24px] lg:text-[30px] text-black leading-tight w-full lg:w-[457px] shrink-0">
           Гарантируем, что ваша криптовалюта всегда остается у вас
@@ -111,7 +108,7 @@ const AboutUs = () => (
         </p>
       </div>
 
-      {/* Section 2: About founders */}
+      {/* текст об основателях */}
       <div className="flex flex-col lg:flex-row lg:justify-between lg:items-start gap-[23px] lg:gap-0">
         <h2 className="font-inter font-semibold text-[24px] lg:text-[30px] text-black leading-tight w-full lg:w-[457px] shrink-0">
           О наших основателях

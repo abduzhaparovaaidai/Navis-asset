@@ -38,10 +38,7 @@ export default function LanguageSelect() {
 
   return (
     <div className="relative inline-block text-left font-sans">
-      {/* 
-        Убрали h-[50px] и добавили те же py-[15px] и px-[12px], 
-        чтобы по высоте кнопка языка идеально совпадала с кнопкой «Начать» 
-      */}
+      
       <button
         type="button"
         onClick={() => setIsOpen(!isOpen)}

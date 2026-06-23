@@ -32,7 +32,7 @@ const NewsBlock = () => {
         {/* News grid */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-[20px] lg:h-[510px]">
 
-          {/* Big card */}
+          {/* большая карточка */}
           {bigCard && (
             <NavLink
               to={`/news-details/${bigCard.id}`}
@@ -61,7 +61,7 @@ const NewsBlock = () => {
             </NavLink>
           )}
 
-          {/* Small cards list */}
+          {/* маленькие карточки */}
           <div className="flex flex-col gap-[20px] lg:gap-[30px]">
             {newsList.slice(1, 5).map((el, idx) => (
               <NavLink

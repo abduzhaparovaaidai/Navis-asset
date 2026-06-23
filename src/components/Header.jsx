@@ -16,7 +16,7 @@ const navClass = ({ isActive }) =>
     }`
 
 const mobileNavClass = ({ isActive }) =>
-    `text-[18px] font-normal py-[12px] border-b border-[#F0F0F0] w-full cursor-pointer transition-colors duration-200
+    `text-[24px] font-normal py-[16px] w-full cursor-pointer transition-colors duration-200
     ${isActive ? 'text-[#D4151C] font-medium' : 'text-black hover:text-[#D4151C]'}`
 
 
@@ -32,30 +32,21 @@ const Header = () => {
         {/* внутренний контейнер */}
         <div className='w-full max-w-[1440px] mx-auto h-full px-[16px] lg:px-[150px] flex justify-between items-center'>
 
-          {/* левая часть */}
+          {/* Левая часть: бургер + логотип рядом */}
           <div className='flex items-center gap-4 h-full shrink-0'>
-
-            {/* бургер — только мобилка */}
             <button
               className='block lg:hidden text-gray-800 hover:text-black hover:bg-gray-100 p-[6px] rounded-[8px] transition-all duration-200 shrink-0 cursor-pointer'
               onClick={() => setIsOpen((v) => !v)}
               aria-label='Открыть меню'
             >
-              {isOpen ? <FiX size={26} /> : <FiMenu size={26} />}
+              <FiMenu size={26} />
             </button>
-
-            {/* логотип */}
             <NavLink to='/' onClick={close}>
-              <img
-                src={logo}
-                alt='Navis Asset'
-                className='h-[36px] lg:h-[48px] w-auto'
-              />
+              <img src={logo} alt='Navis Asset' className='h-[36px] lg:h-[48px] w-auto' />
             </NavLink>
-
           </div>
 
-          {/* меню desktop */}
+          {/* Меню десктоп */}
           <nav className='hidden lg:flex flex-1 justify-center items-center gap-[20px] xl:gap-[40px] h-full px-[20px]'>
             <NavLink to='/' className={navClass}>Услуги</NavLink>
             <NavLink to='/price' className={navClass}>Прайс</NavLink>
@@ -64,10 +55,12 @@ const Header = () => {
             <NavLink to='/contacts' className={navClass}>Контакты</NavLink>
           </nav>
 
-          {/* правая часть desktop */}
-          <div className='hidden lg:flex items-center gap-[10px] h-full'>
-            <LanguageSelect />
-            <NavLink to='/request' className='bg-black text-white text-[16px] font-semibold py-[15px] px-[22px] rounded-[8px] hover:opacity-70 transition'>
+          {/* Правая часть: LanguageSelect (десктоп) + Начать (оба) */}
+          <div className='flex items-center gap-[10px] h-full'>
+            <div className='hidden lg:block'>
+              <LanguageSelect />
+            </div>
+            <NavLink to='/request' className='bg-black text-white text-[16px] font-semibold py-[13px] lg:py-[15px] px-[22px] rounded-[8px] hover:opacity-70 transition'>
               Начать
             </NavLink>
           </div>
@@ -75,27 +68,30 @@ const Header = () => {
         </div>
       </div>
 
-      {/* мобильное меню — выезжает под хедером */}
+      {/* мобильное меню — полноэкранный оверлей */}
       <div
-        className={`fixed top-[64px] left-0 w-full bg-white z-40 border-b border-[#D8D8D8] transition-all duration-300 lg:hidden ${
-          isOpen
-            ? 'opacity-100 translate-y-0 pointer-events-auto'
-            : 'opacity-0 -translate-y-2 pointer-events-none'
+        className={`fixed top-0 left-0 w-screen h-screen bg-white z-[999] flex flex-col lg:hidden transition-opacity duration-300 ${
+          isOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
         }`}
       >
-        <nav className='flex flex-col px-[16px] pt-[8px] pb-[24px]'>
+        {/* верхняя строка: X (закрыть) + LanguageSelect */}
+        <div className='h-[64px] px-[16px] flex items-center justify-between border-b border-[#D8D8D8] shrink-0'>
+          <button
+            className='text-black p-[6px] rounded-[8px] hover:bg-gray-100 transition cursor-pointer'
+            onClick={close}
+          >
+            <FiX size={26} />
+          </button>
+          <LanguageSelect />
+        </div>
+
+        {/* навигация */}
+        <nav className='flex flex-col px-[16px] pt-[8px]'>
           <NavLink to='/' className={mobileNavClass} onClick={close}>Услуги</NavLink>
           <NavLink to='/price' className={mobileNavClass} onClick={close}>Прайс</NavLink>
           <NavLink to='/reviews' className={mobileNavClass} onClick={close}>Отзывы</NavLink>
           <NavLink to='/about-us' className={mobileNavClass} onClick={close}>О нас</NavLink>
           <NavLink to='/contacts' className={mobileNavClass} onClick={close}>Контакты</NavLink>
-
-          <div className='flex items-center justify-between mt-[20px]'>
-            <LanguageSelect />
-            <NavLink to='/request' onClick={close} className='bg-black text-white text-[16px] font-semibold py-[13px] px-[22px] rounded-[8px] hover:opacity-70 transition'>
-              Начать
-            </NavLink>
-          </div>
         </nav>
       </div>
     </>

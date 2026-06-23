@@ -19,11 +19,11 @@ const Partners = () => {
     fetchPartnersList();
   }, []);
 
-  // Дублируем список для бесконечного скролла
+  // Дублирую список для бесконечного скролла
   const duplicated = [...partnersList, ...partnersList];
 
   return (
-    <div className="w-full overflow-hidden mt-[100px] lg:mt-[130px] h-[90px] flex items-center p-px ">
+    <div className="w-full overflow-hidden mt-[100px] lg:mt-[130px] h-[42px] lg:h-[90px] flex items-center p-px ">
       <div
         ref={trackRef}
         className="flex items-center gap-[56px] lg:gap-[130px]"
@@ -35,18 +35,18 @@ const Partners = () => {
         {duplicated.map((el, id) => (
           <div
             key={id}
-            className="flex-shrink-0 flex items-center justify-center"
+            className="flex-shrink-0 flex items-center justify-center w-[135px] h-[36px] lg:w-auto lg:h-auto"
           >
             <img
               src={el.image}
               alt={`Partner ${id}`}
-              className="block max-h-[90px] mx-auto object-contain object-center"
+              className="block w-full h-full lg:w-auto lg:max-h-[90px] object-contain object-center"
             />
           </div>
         ))}
       </div>
 
-      {/* CSS-анимация через style-тег, так как Tailwind не поддерживает keyframes напрямую */}
+      {/* CSS анимация через style-тег, Tailwind не поддерживает keyframes напрямую */}
       <style>{`
         @keyframes scroll-partners {
           0% { transform: translateX(0); }

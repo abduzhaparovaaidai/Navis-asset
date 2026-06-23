@@ -73,7 +73,7 @@ const Contacts = () => {
     <div className="w-full max-w-[1440px] mx-auto px-[16px] lg:px-[150px] mt-[40px] mb-[80px] lg:mb-[120px]">
       <div className="flex flex-col lg:flex-row gap-[10px]">
 
-        {/* ── Left card: contact info ── */}
+        {/* левая карточка */}
         <div
           className="w-full lg:w-[564px] shrink-0 rounded-[16px] lg:rounded-[30px] p-[16px] lg:p-[30px] flex flex-col justify-between gap-[40px] lg:gap-0"
           style={gradientBg}
@@ -118,7 +118,7 @@ const Contacts = () => {
           </p>
         </div>
 
-        {/* ── Right card: form ── */}
+        {/* правая карточка: форма */}
         <div className="flex-1 rounded-[16px] lg:rounded-[30px] bg-[#F5F7FA] p-[16px] lg:p-[30px]">
           <form onSubmit={handleSubmit} className="flex flex-col gap-[24px]">
 
