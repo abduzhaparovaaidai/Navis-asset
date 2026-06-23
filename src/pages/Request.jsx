@@ -1,18 +1,27 @@
 import React, { useState } from 'react'
-import { BsGeoAlt } from 'react-icons/bs'
-import { MdOutlinePhone, MdMailOutline } from 'react-icons/md'
-import { FaTelegramPlane, FaTiktok } from 'react-icons/fa'
-import { PiInstagramLogoBold } from 'react-icons/pi'
-import { IoLogoWhatsapp } from 'react-icons/io'
+import { BsWallet2 } from 'react-icons/bs'
+import { MdOutlineShield, MdCheck } from 'react-icons/md'
 import { url } from '../components/Partners'
 
-const gradientBg = { background: 'linear-gradient(135deg, #D4151C 0%, #D35400 100%)' }
+const gradient = { background: 'linear-gradient(135deg, #D4151C 0%, #D35400 100%)' }
+const iconBg = { background: 'rgba(212, 21, 28, 0.1)' }
 
-const socials = [
-  { Icon: IoLogoWhatsapp,      href: '#' },
-  { Icon: FaTelegramPlane,     href: '#' },
-  { Icon: PiInstagramLogoBold, href: '#' },
-  { Icon: FaTiktok,            href: '#' },
+const features = [
+  {
+    Icon: BsWallet2,
+    title: 'Доверенное восстановление кошелька',
+    desc: 'Самое надежное имя в восстановлении цифровых активов с 2017 года.',
+  },
+  {
+    Icon: MdOutlineShield,
+    title: 'Безопасное недоступное хранилище',
+    desc: 'Вся информация о кошельках и паролях зашифрована и хранится на оффлайн-серверах с воздушным зазором.',
+  },
+  {
+    Icon: MdCheck,
+    title: 'Начните совершенно бесплатно',
+    desc: 'Гарантия без риска - вы нам не заплатите ни копейки, если мы не сможем восстановить ваш пароль.',
+  },
 ]
 
 const inputCls  = "w-full h-[50px] rounded-[8px] bg-white border border-[#E8E8E8] px-[16px] font-inter font-normal text-[14px] text-black placeholder:text-[#BDBDBD] outline-none focus:border-[#D4151C] transition-colors"
@@ -38,7 +47,7 @@ const SelectField = ({ label, name, value, onChange, placeholder, options }) => 
   </Field>
 )
 
-const Contacts = () => {
+const Request = () => {
   const [form, setForm] = useState({
     name: '', surname: '', country: '', email: '',
     phone: '', recovery_types: '', wallet_type: '', wallet_volume: '',
@@ -73,52 +82,32 @@ const Contacts = () => {
     <div className="w-full max-w-[1440px] mx-auto px-[16px] lg:px-[150px] mt-[40px] mb-[80px] lg:mb-[120px]">
       <div className="flex flex-col lg:flex-row gap-[10px]">
 
-        {/* ── Left card: contact info ── */}
-        <div
-          className="w-full lg:w-[564px] shrink-0 rounded-[16px] lg:rounded-[30px] p-[16px] lg:p-[30px] flex flex-col justify-between gap-[40px] lg:gap-0"
-          style={gradientBg}
-        >
-          <div className="flex flex-col gap-[40px] lg:gap-[60px]">
-            <h2 className="font-inter font-semibold text-[24px] lg:text-[30px] text-white leading-tight max-w-[296px] lg:max-w-[504px]">
-              Техническая поддержка, сотрудничество и PR
-            </h2>
-            <div className="flex flex-col gap-[30px]">
-              <div className="flex flex-row items-start gap-[16px]">
-                <BsGeoAlt size={20} className="text-white shrink-0 mt-[2px]" />
-                <p className="font-inter font-normal text-[14px] text-white leading-tight">
-                  Кыргызская республика, г.Бишкек, Проспект Манаса 64/1
+        {/* Left: Feature blocks */}
+        <div className="w-full lg:flex-1 flex flex-col gap-[20px]">
+          {features.map(({ Icon, title, desc }, i) => (
+            <div
+              key={i}
+              className="bg-white rounded-[20px] p-[20px] lg:p-[30px] flex flex-row gap-[20px] lg:flex-1"
+            >
+              <div
+                className="w-[60px] h-[60px] rounded-full flex items-center justify-center shrink-0"
+                style={iconBg}
+              >
+                <Icon size={24} className="text-[#D4151C]" />
+              </div>
+              <div className="flex flex-col gap-[10px]">
+                <h3 className="font-inter font-medium text-[18px] lg:text-[24px] text-black leading-tight">
+                  {title}
+                </h3>
+                <p className="font-inter font-normal text-[16px] text-[#6F6F6F] leading-[1.3]">
+                  {desc}
                 </p>
               </div>
-              <div className="flex flex-row items-start gap-[16px]">
-                <MdOutlinePhone size={20} className="text-white shrink-0 mt-[2px]" />
-                <div className="flex flex-col gap-[4px]">
-                  <p className="font-inter font-normal text-[14px] text-white leading-none">+996 (502)-800-202</p>
-                  <p className="font-inter font-normal text-[14px] text-white leading-none">+996 (502)-800-202</p>
-                </div>
-              </div>
-              <div className="flex flex-row items-center gap-[16px]">
-                <MdMailOutline size={20} className="text-white shrink-0" />
-                <p className="font-inter font-normal text-[14px] text-white leading-none">navisasset@mail.com</p>
-              </div>
             </div>
-            <div className="flex flex-col gap-[20px]">
-              <h5 className="font-inter font-semibold text-[16px] text-white leading-none">Мы в соцсетях</h5>
-              <div className="flex flex-row gap-[12px]">
-                {socials.map(({ Icon, href }, idx) => (
-                  <a key={idx} href={href}
-                    className="w-[40px] h-[40px] rounded-[10px] bg-white flex items-center justify-center text-[#D4151C] hover:opacity-80 transition-opacity duration-200">
-                    <Icon size={20} />
-                  </a>
-                ))}
-              </div>
-            </div>
-          </div>
-          <p className="font-inter font-normal text-[14px] text-[#F5F7FA] leading-[1.4] max-w-[504px]">
-            Если у Вас возникли вопросы технического или финансового плана, напишите нам и мы поможем Вам в решении вашего вопроса. Мы отвечаем на вопросы в течение 15-60 минут, в зависимости от загрузки сервиса.
-          </p>
+          ))}
         </div>
 
-        {/* ── Right card: form ── */}
+        {/* Right: Form */}
         <div className="flex-1 rounded-[16px] lg:rounded-[30px] bg-[#F5F7FA] p-[16px] lg:p-[30px]">
           <form onSubmit={handleSubmit} className="flex flex-col gap-[24px]">
 
@@ -166,9 +155,11 @@ const Contacts = () => {
               </p>
             </div>
 
-            <button type="submit"
+            <button
+              type="submit"
               className="w-full h-[50px] rounded-[8px] font-inter font-semibold text-[16px] text-white hover:opacity-90 transition-opacity duration-200 cursor-pointer"
-              style={gradientBg}>
+              style={gradient}
+            >
               Отправить заявку
             </button>
 
@@ -180,4 +171,4 @@ const Contacts = () => {
   )
 }
 
-export default Contacts
+export default Request
