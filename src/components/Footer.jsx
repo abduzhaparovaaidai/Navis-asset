@@ -25,7 +25,7 @@ const navMain = [
 
 const navUser = [
   { label: 'Услуги',   to: '/' },
-  { label: 'Отзывы',   to: '/reviews' },
+  // { label: 'Отзывы',   to: '/reviews' },
   { label: 'Прайс',    to: '/price' },
   { label: 'Новости',  to: '/news' },
 ]

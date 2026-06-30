@@ -50,7 +50,7 @@ const Header = () => {
           <nav className='hidden lg:flex flex-1 justify-center items-center gap-[20px] xl:gap-[40px] h-full px-[20px]'>
             <NavLink to='/' className={navClass}>Услуги</NavLink>
             <NavLink to='/price' className={navClass}>Прайс</NavLink>
-            <NavLink to='/reviews' className={navClass}>Отзывы</NavLink>
+            {/* <NavLink to='/reviews' className={navClass}>Отзывы</NavLink> */}
             <NavLink to='/about-us' className={navClass}>О&nbsp;нас</NavLink>
             <NavLink to='/contacts' className={navClass}>Контакты</NavLink>
           </nav>
@@ -97,7 +97,7 @@ const Header = () => {
         <nav className='flex flex-col px-[16px] pt-[8px]'>
           <NavLink to='/' className={mobileNavClass} onClick={close}>Услуги</NavLink>
           <NavLink to='/price' className={mobileNavClass} onClick={close}>Прайс</NavLink>
-          <NavLink to='/reviews' className={mobileNavClass} onClick={close}>Отзывы</NavLink>
+          {/* <NavLink to='/reviews' className={mobileNavClass} onClick={close}>Отзывы</NavLink> */}
           <NavLink to='/about-us' className={mobileNavClass} onClick={close}>О нас</NavLink>
           <NavLink to='/contacts' className={mobileNavClass} onClick={close}>Контакты</NavLink>
         </nav>
